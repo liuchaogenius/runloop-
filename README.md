@@ -16,6 +16,21 @@ RunLoop 顺序
                  12、进入 2
                  
                  13、退出
+                 
+                 typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
+   kCFRunLoopEntry = (1UL << 0), // 进入runloop的时候
+   kCFRunLoopBeforeTimers = (1UL << 1),// 执行timer前
+   kCFRunLoopBeforeSources = (1UL << 2), // 执行事件源前
+   kCFRunLoopBeforeWaiting = (1UL << 5),//休眠前
+   kCFRunLoopAfterWaiting = (1UL << 6),//休眠后
+   kCFRunLoopExit = (1UL << 7),// 退出
+   kCFRunLoopAllActivities = 0x0FFFFFFFU
+};
+
+作者：南栀倾寒
+链接：https://www.jianshu.com/p/6757e964b956
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 //
 //  PerformanceMonitor.m
